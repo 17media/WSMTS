@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "WSMTS"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "The Wansu barrage SDK for iOS Swift and Objective-C"
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
-  spec.ios.vendored_frameworks = "**/iOS/WSMTS.framework"
+  spec.ios.vendored_frameworks = "**/WSMTS.framework"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -86,7 +86,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :http => "https://github.com/17media/WSMTS/releases/download/1.0.0/WSMTS.framework.zip" }
+  spec.source       = { :http => "https://github.com/17media/WSMTS/releases/download/1.0.1/WSMTS.framework.zip" }
   spec.static_framework = true
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -139,5 +139,9 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+
+  spec.libraries   = "stdc++"
+
+  spec.requires_arc = true
 
 end

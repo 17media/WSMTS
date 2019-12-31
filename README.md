@@ -64,13 +64,13 @@ To use the WSMTS for iOS Swift and Objective-C, you need:
 #pragma - WSMTSDelegate
 
 - (void)wsmtsConnectWithResult:(NSInteger)roomID result:(BOOL)result {
-    NSString *msg = [NSString stringWithFormat:@"roomid:%ld connect：%@", (long)roomID, result ? @"Sucess" : @"Failed"];
+    NSString *msg = [NSString stringWithFormat:@"roomid: %ld connect result: %@", (long)roomID, result ? @"sucess" : @"failed"];
     [self displayMessage:msg];
     NSLog(@"%@", msg);
 }
 
 - (void)wsmtsDisconnectWithRoomID:(NSInteger)roomID {
-    NSString *msg = [NSString stringWithFormat:@"disconnect roomid:%ld", (long)roomID];
+    NSString *msg = [NSString stringWithFormat:@"disconnect roomid: %ld", (long)roomID];
     [self displayMessage:msg];
     NSLog(@"%@", msg);
 }
@@ -82,7 +82,7 @@ To use the WSMTS for iOS Swift and Objective-C, you need:
             message = @"sucess";
             break;
         case 1:
-            message = @"get room address failed";
+            message = @"get room network address failed";
             break;
         case 2:
             message = @"socket disconnect failed";
@@ -90,11 +90,11 @@ To use the WSMTS for iOS Swift and Objective-C, you need:
         case 3:
             message = @"authentication failed";
             break;
-		case 4:
-			message = @"domain name parsing failed";
+	case 4:
+	    message = @"domain name parsing failed";
             break;
-		case 5:
-			message = @"incorrect room ID";
+	case 5:
+	    message = @"incorrect room ID";
             break;
         case 10:
             message = @"others error";
@@ -103,7 +103,7 @@ To use the WSMTS for iOS Swift and Objective-C, you need:
             message = @"unknown error";
             break;
     }
-    NSString *msg = [NSString stringWithFormat:@"enter roomid:%ld, error code:%ld, description:%@", (long)roomID, (long)errorCode, message];
+    NSString *msg = [NSString stringWithFormat:@"enter roomid: %ld, error code: %ld, description: %@", (long)roomID, (long)errorCode, message];
     [self displayMessage:msg];
     NSLog(@"%@", msg);
 
@@ -111,14 +111,14 @@ To use the WSMTS for iOS Swift and Objective-C, you need:
 
 - (void)wsmtsReceiveBarrage:(NSInteger)roomID message:(NSData *)message {
     NSString *string = [[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding];
-    NSString *msg = [NSString stringWithFormat:@"room %ld receive barrage:%@", (long)roomID, string];
+    NSString *msg = [NSString stringWithFormat:@"room %ld receive barrage: %@", (long)roomID, string];
     [self displayMessage:msg];
     NSLog(@"%@", msg);
 }
 
 - (void)wsmtsReceivePrivateChatWithCID:(NSInteger)roomID cid:(NSString*)cid message:(NSData *)message {
     NSString *string = [[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding];
-    NSString *msg = [NSString stringWithFormat:@"room %ld receive private chat:%@, %@", (long)roomID, cid, string];
+    NSString *msg = [NSString stringWithFormat:@"room %ld receive private chat: %@, %@", (long)roomID, cid, string];
     [self displayMessage:msg];
     NSLog(@"%@", msg);
 }
